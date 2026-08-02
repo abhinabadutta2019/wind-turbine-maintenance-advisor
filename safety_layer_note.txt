@@ -1,0 +1,16 @@
+Safety Layer Note
+
+The maintenance advisor contains an offline safety layer.
+
+The safety layer identifies safety topics related to the detected component
+and maintenance intent. It adds relevant warnings from the structured
+knowledge base and manual evidence.
+
+The safety layer works without Groq, Llama, or any other online language model.
+
+The optional LLM is used only to improve the wording of the final answer.
+It must not create new safety instructions, remove warnings, or replace the
+offline advisor.
+
+If the LLM is unavailable, the original offline answer and safety warnings
+are returned.

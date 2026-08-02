@@ -1,0 +1,315 @@
+============================================================
+DEMO QUESTION: How do I maintain the battery?
+============================================================
+
+Question:
+How do I maintain the battery?
+
+Detected intent:
+maintenance
+
+Detected component:
+battery
+
+Confidence:
+medium
+
+Answer:
+1. Check if current is going into the batteries.
+2. Make sure batteries are air-cooled.
+
+Tools/materials:
+- clamp meter
+
+Safety warnings:
+- No information available in the manual.
+
+Evidence from manual:
+- chunk_id: 69 | score: 0.137
+  The forwardbiased resistance of a good diode should range from 1000Ω to 10MΩ. The reversebiased resistance of a good diode displays OL on a multimeter. The diode is bad if values are the same in both directions. 6 Maintaining your wind turbine system • Offgrid Check the battery bank voltage and the voltage of each single battery. For flood lead acid batteries: Check the level of distilled water by opening the cap. The lead plate should be flooded entirely. Add distilled water if necessary. Check the battery bank connectors. Oxidised ones should be cleaned with sand paper and be protected with some grease (figure 56). Check the fuses with your multimeter on continuity position (see figure 54).
+- chunk_id: 87 | score: 0.132
+  Broken tail hinge (figure 61): On a very turbulent site, the tail was always moving up and down leading to cracks on the hinge at the low stop level. Remedy: Reinforce the welding (see figure 43, page 28) if your turbine is installed on a very turbulent site. Burnt stator (figure 62): Wind turbine short circuited for some time. A strong windy day leads to this failure. Remedy: In case of strong wind, let your turbine run instead of braking it. Burnt Tristar batteries (figure 63): Problem with a battery that lead the burning of the Tristar which then dumped the battery pack energy directly into the dumpload. Remedy: Check your battery bank. Make sure that your charge controller capacity (e.g. if your system gives 40A, a 45A charge controller is undersized).
+- chunk_id: 14 | score: 0.113
+  Protect chains by pouring them into concrete (figure 4). Protect guy wires and fittings with oil or grease (can also be old car oil) • blades • base of tower • anchors • metal parts Hotdry climates Overheating of electrical components (High temperatures can reduce the battery life by more than 75%) Don‘t paint the stator, it will help the cooling of the coils by ambient air. Make sure all electrical components are ventilated and not enclosed. Make sure batteries are aircooled: surelevate them on a wooden palette, try airconditionning, and make a good insulation of the battery room.
+
+Answer mode:
+offline_advisor
+
+============================================================
+DEMO QUESTION: What are the risks with magnets?
+============================================================
+
+Question:
+What are the risks with magnets?
+
+Detected intent:
+safety
+
+Detected component:
+magnets
+
+Confidence:
+medium
+
+Answer:
+1. Replace magnets if they are corroded.
+2. Use epoxy resin when replacing magnets.
+
+Tools/materials:
+- No information available in the manual.
+
+Safety warnings:
+- Permanent magnet generators have a powerful magnetic field.
+
+Evidence from manual:
+- chunk_id: 12 | score: 0.182
+  If you have galvanized ones, protect them with old car oil or other kind of grease. If the magnets are corroded, build new rotors and paint or galvanise the disks, and use expoy resin. Use also epoxy coating magnets Use high quality plywood or change by metal parts. • neodynium magnets • guy wires • other metalic part (frame, tail, tower) • plywood parts Hail Blades affected by erosion Tail damaged The paint on metal parts can be removed Fix holes and eroded parts with epoxy resin and protect the blades with paint or polyurethane varnish. Protect the plywood tail with resin or polyurethane varnish. • blades • tail If a wind turbine is running below one or more of these factors, it will require more frequent preventative maintenance.
+- chunk_id: 27 | score: 0.135
+  5 Lowering and raising the turbine 5 Lowering and raising the turbine Usually the tower of a Piggott wind turbine is made of pipes assembled and kept in vertical position with guy wires. Turbine lowering and raising operations are done with a gin pole and a grip hoist. It can be dangerous don‘t take unnecessary risks. The main risk is the tower falling down with the turbine . In worst case, a person can be seriously injured. This can happen in case of: • One or several guy wires break on the same side. • A grip hoist cable breaks or the cable is released abnormaly (problem with the break lever of the grip hoist) • Strong wind To prevent these risks, follow the precaution safety operations. A team of at least 2 experienced people is required but 4 people make the work a lot easier.
+- chunk_id: 16 | score: 0.089
+  • blades • electrical connections 3 Environmental factors Factors Risks Countermeasures Main sensitive parts Storms Strong vibrations on the whole system might break the blades and/or tail Lower the turbine if a storm is predicted or inspect your turbine after the storm. We recommend to let the turbine running because when it is stopped, a high wind speed can be stronger than the BEMF with a risk to burn the coils and the blades keep onwind, which means stronger mechanical forces on the blade area, with higher risk of failure.
+
+Answer mode:
+offline_advisor
+
+============================================================
+DEMO QUESTION: What should I do if there is rust?
+============================================================
+
+Question:
+What should I do if there is rust?
+
+Detected intent:
+troubleshooting
+
+Detected component:
+metal parts and cables
+
+Confidence:
+high
+
+Answer:
+1. Inspect the rusty part and determine whether the rust is on cable clamps, guy wires, the tower, or another metal part.
+2. Protect rusty cable clamps with grease.
+3. Guy wires with rust can be protected with used motor oil.
+4. Replace the cable if you find a broken cable strand.
+5. Check the tower and metal frame for rust and cracks in the welds.
+
+Tools/materials:
+- grease
+- used motor oil
+
+Safety warnings:
+- Replace the cable if any cable strand is broken; surface protection is not enough for damaged cable.
+
+Evidence from manual:
+- chunk_id: 59 | score: 0.495
+  Check if all cable clamps are well tightened. If they start to rust you can protect them with grease. Check if all shackles are secured (figure 46). Check if all turnbuckles are secure and if bolts are well tightened. Check the general condition of the guy wires. If you see some rust even severe rust (figure 47) you can protect the cables by soaking them in used motor oil. Use some fuel if the oil needs diluting. If there is broken cable strand, you need to change the cable. Remember that high quality galvanised, even more stainless, guy wires and fastenings last longer, even in harsh conditions. Check the general condition of the cables at the bottom of the tower.
+- chunk_id: 11 | score: 0.200
+  The electrical system should also be connected to the same ground rod via a ground cable to the tower. Be sure there is a lightning arrester between the tower and the electronics. On a gridtied connection, be sure there is a lightning arrestor between the grid and the inverter. • electronics • anchors Saline air Corrosion of magnets (comes from the rust inside the resin), guy wires and all metallic parts (tower, frame, etc.) Wear of components made of plywood (especially if poor quality plywood) Protect exposed metal materials and rotors of the WT with a painting against corrosion. Change rusted fastenings and guy wires by stainless ones. If you have galvanized ones, protect them with old car oil or other kind of grease.
+- chunk_id: 86 | score: 0.148
+  Remedy: Keep and/or add rubber sealing. Avoid play in the conical bearing or use NE bearing. Broken anchor (figure 60): A 22 m/s wind finished to cut a chain holding the guy wires already eroded by sand and lead to the falldown of the tower and the turbine. The pin at the tower base came off and couldn‘t avoid the tower falldown. Everything was destroyed except rotors: blades, frame, tail, tower a bit deformed but reused. Remedy: Change guy wires and chains if wear is observed; pour chain into concrete. Change the tower base, the stator, the tail, the frame and replace the 3phase cable. Broken tail hinge (figure 61): On a very turbulent site, the tail was always moving up and down leading to cracks on the hinge at the low stop level.
+
+Answer mode:
+offline_advisor
+
+============================================================
+DEMO QUESTION: How do I inspect the blades?
+============================================================
+
+Question:
+How do I inspect the blades?
+
+Detected intent:
+inspection
+
+Detected component:
+blades
+
+Confidence:
+high
+
+Answer:
+1. Inspect blades for cracks, holes, and other damage.
+2. Inspect the leading edge.
+3. Inspect blade roots.
+4. Check the distance between blade tips and the tower.
+
+Tools/materials:
+- No information available in the manual.
+
+Safety warnings:
+- Be careful when removing blades.
+
+Evidence from manual:
+- chunk_id: 75 | score: 0.336
+  Check list Inspection should be done with a wind speed below 7m/s. 8.1 Wind turbine Inspect the blades for: • Cracks noticeable in the wood or in the fiberglass (for resin blade), especially at the blade roots • Leading or trailing edge damage • Condition of the paint (if painted) or coating • Check if balancing weights are still fixed Check the rotor and stator for scratches and failures in resin Inspect the metal frame for cracks and rust on the welding Inspect the condition of the electrical cable and the gripping system Check for cracks or loose equipment on the tailboom and vane Check the tightness on the blade nuts Check the front bearing for seal integrity and grease loss.
+- chunk_id: 76 | score: 0.244
+  8.1 Wind turbine Inspect the blades for: • Cracks noticeable in the wood or in the fiberglass (for resin blade), especially at the blade roots • Leading or trailing edge damage • Condition of the paint (if painted) or coating • Check if balancing weights are still fixed Check the rotor and stator for scratches and failures in resin Inspect the metal frame for cracks and rust on the welding Inspect the condition of the electrical cable and the gripping system Check for cracks or loose equipment on the tailboom and vane Check the tightness on the blade nuts Check the front bearing for seal integrity and grease loss. Check the thightness of the flange Check the play in the hub Check the connections in the junction box and the junction box condition Check the tail pivot system, it should move freely and have enough grease Release the turbine switching the brake OFF and check that the generator turns freely Measure the resistance between each phase 8 Check list 8.2 Tower and guy wires Check if the electrical cable is twisted and check the condition of the cable.
+- chunk_id: 16 | score: 0.207
+  • blades • electrical connections 3 Environmental factors Factors Risks Countermeasures Main sensitive parts Storms Strong vibrations on the whole system might break the blades and/or tail Lower the turbine if a storm is predicted or inspect your turbine after the storm. We recommend to let the turbine running because when it is stopped, a high wind speed can be stronger than the BEMF with a risk to burn the coils and the blades keep onwind, which means stronger mechanical forces on the blade area, with higher risk of failure.
+
+Answer mode:
+offline_advisor
+
+============================================================
+DEMO QUESTION: What safety equipment should I wear?
+============================================================
+
+Question:
+What safety equipment should I wear?
+
+Detected intent:
+safety
+
+Detected component:
+general safety
+
+Confidence:
+high
+
+Answer:
+1. Wear protective gloves.
+2. Wear safety shoes.
+3. Wear a safety helmet.
+4. Work carefully and make sure everyone nearby behaves responsibly.
+
+Tools/materials:
+- protective gloves
+- safety shoes
+- safety helmet
+
+Safety warnings:
+- Safety must remain the primary concern during all maintenance operations.
+- Be attentive to both electrical and mechanical risks.
+
+Evidence from manual:
+- chunk_id: 9 | score: 0.586
+  The permanent magnet generators have a particularly powerful magnetic field . Safety gear We recommend you to wear safety equipment like gloves, safety shoes and a safety helmet. But remember that the best safety is to work intelligently and making sure the people around you are equally behaving in a responsible manner. Safety should be your primary concern during all maintenance actions performed on your small wind installation and particularly when raising and lowering the tower. Be attentive for risks that may arise from both electrical and mechanical components. 3 Environmental factors The following table provides an overview about factors that can significantly influence the life span of a SWT.
+- chunk_id: 50 | score: 0.152
+  Remember: You have to change both roller bearings at the same time. We recommend to get the full kit as it‘s good to have spare parts like a safety pin and it‘s hard to get rid of the rubber sealing without damaging it. Use quality brands like SKF or SNR if possible. Make sure that your working space and your hands are clean of dust when you replace the bearings. You can keep the shaft screwed on the nacelle during the whole operation. Take out the cap by gently knocking it out with a chisel. Depending on your hub: take off the safety pin and the nuts or strike out the nuts with a suitable drift. Be careful with the nuts as you may encounter left hand thread or right hand thread!
+- chunk_id: 53 | score: 0.133
+  Put it on the shaft and then fit the second bearing followed by a washer and a nut. Tighten the nut, spin the hub and then slack it off a quarter turn or so to reduce stress on the bearing. Depending on the kind of hub: - Use the safety nut and safety pinLock the nut by striking it on both sides with a burin (see figure 41). Add some grease in the cap and put it back gently. You can find a video animation on “how to open and change the bearing“ on the following website: http://www.tripalium.org/blog/default/post/id/330nouvelle-videodanimation Note: some people experienced problems with freedom in the conical bearing especially with 4.2m diameter turbines. The problems occur after few years when the rotor rubs the stator.
+
+Answer mode:
+offline_advisor
+
+============================================================
+DEMO QUESTION: What should I check in the tower?
+============================================================
+
+Question:
+What should I check in the tower?
+
+Detected intent:
+inspection
+
+Detected component:
+tower
+
+Confidence:
+high
+
+Answer:
+1. Check the distance between blade tips and the tower.
+2. Check flange tightness.
+3. Check the connections in the junction box.
+4. Check the tail pivot system.
+
+Tools/materials:
+- No information available in the manual.
+
+Safety warnings:
+- Do not stay below the tower during lowering or raising.
+
+Evidence from manual:
+- chunk_id: 77 | score: 0.526
+  Check the thightness of the flange Check the play in the hub Check the connections in the junction box and the junction box condition Check the tail pivot system, it should move freely and have enough grease Release the turbine switching the brake OFF and check that the generator turns freely Measure the resistance between each phase 8 Check list 8.2 Tower and guy wires Check if the electrical cable is twisted and check the condition of the cable. Check the tower weldings. Check the tightness of the cable clamps. Make sure that the tower shackles are secure and/or well tightened. Check the tightness of the fasteners (tower and base). Check the connection at all ground rods, at the tower and guy wires. Check the connections in the junction box and the condition of the junction box.
+- chunk_id: 76 | score: 0.364
+  8.1 Wind turbine Inspect the blades for: • Cracks noticeable in the wood or in the fiberglass (for resin blade), especially at the blade roots • Leading or trailing edge damage • Condition of the paint (if painted) or coating • Check if balancing weights are still fixed Check the rotor and stator for scratches and failures in resin Inspect the metal frame for cracks and rust on the welding Inspect the condition of the electrical cable and the gripping system Check for cracks or loose equipment on the tailboom and vane Check the tightness on the blade nuts Check the front bearing for seal integrity and grease loss. Check the thightness of the flange Check the play in the hub Check the connections in the junction box and the junction box condition Check the tail pivot system, it should move freely and have enough grease Release the turbine switching the brake OFF and check that the generator turns freely Measure the resistance between each phase 8 Check list 8.2 Tower and guy wires Check if the electrical cable is twisted and check the condition of the cable.
+- chunk_id: 58 | score: 0.319
+  You can check the surface and thickness of the plywood wind vane and add some weight on the tail vane. If you notice wooden tail cracks at the end of the brackets, you can extend the tail boom to the middle or end of the tail plywood and change the 2 diagonal brackets by 2 vertical ones (figure 45). 6.3 Tower and foundation Tower Once the tower is down have a general look at the tower looking for rust, missing bolts, cracks in welding. Take special care at the tower yaw pipe, it‘s the one that are subject to the highest wear. Check all the bolts on the tower, mast base and gin pole axes, turnbuckles and shackles. Don‘t forget to add threadlock while tightening. Check if the cable thimbles are in their correct position. Check if all cable clamps are well tightened.
+
+Answer mode:
+offline_advisor
+
+============================================================
+DEMO QUESTION: What should I do in case of short circuit?
+============================================================
+
+Question:
+What should I do in case of short circuit?
+
+Detected intent:
+troubleshooting
+
+Detected component:
+electrical system
+
+Confidence:
+high
+
+Answer:
+1. Disconnect the tower wire to help locate the short circuit.
+2. If the turbine still does not start, the short circuit may be in the tower cable or alternator.
+3. If the turbine starts, check the other wiring, rectifier, or controller.
+4. If an alternator winding failure is suspected, lower the turbine and check the stator voltage output.
+
+Tools/materials:
+- appropriate electrical testing equipment
+
+Safety warnings:
+- Live electrical wires can create a risk of electric shock.
+- A short circuit in battery wiring can cause burning or an explosion.
+- Avoid sparks, flames, and other ignition sources near lead-acid batteries.
+
+Evidence from manual:
+- chunk_id: 63 | score: 0.379
+  If the voltage between 2 phases is zero, suspect a shortcircuit in the wiring or in the alternator. A pulsating torque holding back the blades indicates a short between two of the 3 wires. If case of a shortcircuit, an easy test is to disconnect the tower wire. If the turbine still does not start, then the short is above: in the tower cable or in the alternator. If the turbine does start, then the short is elsewhere (wiring, rectifier or controller). If no current is found, several possibilities: There may be a shortcircuit failure of the alternator windings due to burned coil or insulation failures in wet conditions: In this case lower the turbine to check the stator voltage output. Electrical issues can certainly impact energy production.
+- chunk_id: 8 | score: 0.199
+  Be careful when you dismount the blades to store them in a safe place to avoid any damage. 2 Safety & precautions Electrical hazards Power cables Risk of electroshock from touching the live wires for 48V and gridtied systems (400V), especially if you disconnect a cable and as a consequence your turbine is spinning freely. Batteries • A short circuit in the wires connected to the batteries can cause a burning or an explosion. • Charging a leadacid battery emits hydrogen, which is highly explosive. • Make sure that the area where the battery is located is well ventilated. • Watch out for sparks, flames and other sources of ignition! Magnets If you have a pacemaker or other medical devices, stay away! The permanent magnet generators have a particularly powerful magnetic field .
+- chunk_id: 87 | score: 0.145
+  Broken tail hinge (figure 61): On a very turbulent site, the tail was always moving up and down leading to cracks on the hinge at the low stop level. Remedy: Reinforce the welding (see figure 43, page 28) if your turbine is installed on a very turbulent site. Burnt stator (figure 62): Wind turbine short circuited for some time. A strong windy day leads to this failure. Remedy: In case of strong wind, let your turbine run instead of braking it. Burnt Tristar batteries (figure 63): Problem with a battery that lead the burning of the Tristar which then dumped the battery pack energy directly into the dumpload. Remedy: Check your battery bank. Make sure that your charge controller capacity (e.g. if your system gives 40A, a 45A charge controller is undersized).
+
+Answer mode:
+offline_advisor
+
+============================================================
+DEMO QUESTION: How do I maintain the cable?
+============================================================
+
+Question:
+How do I maintain the cable?
+
+Detected intent:
+maintenance
+
+Detected component:
+cable
+
+Confidence:
+medium
+
+Answer:
+1. Check the general condition of the cables at the bottom of the tower.
+2. Replace worn cables when necessary.
+3. Correct wrong cable connections when found.
+4. Protect rusty cable clamps with grease.
+
+Tools/materials:
+- No information available in the manual.
+
+Safety warnings:
+- Live power cables can create a risk of electric shock.
+
+Evidence from manual:
+- chunk_id: 2 | score: 0.114
+  Wind Empowerment’s Maintenance Working Group (WG) was formed in Athens during the 2 nd global conference, with the following group vision: “To mutually empower people to keep their turbines running.” Tripalium (French network for Piggott wind turbines: http://www.tripalium.org) produced the first two versions of a maintenance manual that has been translated into an english version for WindEmpowerment. The 3rd version is the result of 6 months of teamwork. The objective is to increase users autonomy for producing their own electricity by being able to operate and maintain their wind turbines. This manual is available as a free download at the WE and WE members website. However donations are suitable to support a future edition of this .
+- chunk_id: 6 | score: 0.114
+  For this reason this document is meant to to be updated in the future. A database will be available online to monitor SWT maintenance actions but also failures or breakdowns that occured, so we encourage you to give us your feedback at windempowerment.group@gmail.com to help us to improve future editions.This manual is mainly focused on Piggott SWT design concept with guy wired tower, for offgrid and gridtied systems. However, it can also be useful for commercially manufactured turbines. We hope this work will help you to operate and maintain your turbine so it can reach it‘s full potential. 2 Safety & precautions Unlike most of s for manufactured goods, we strongly encourage you to take apart your turbine. Check the weather forecast before planning a maintenance service.
+- chunk_id: 81 | score: 0.092
+  That can suck out your batteries Find the problem and change the charge controller Wrong cable connection (e.g. wrong connection in power cable) Correct the connection 9.
+
+Answer mode:
+offline_advisor
+

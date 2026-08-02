@@ -1,0 +1,88 @@
+OFFLINE VS LLM COMPARISON
+
+Comparison note:
+
+The offline and LLM outputs are technically identical in this example.
+The LLM mode was successfully used, as shown by the answer mode
+"offline_advisor_with_llm_rewriting".
+
+The offline answer was already clear, so Groq/Llama preserved the wording
+without adding new technical instructions. This confirms that the LLM acts
+only as an optional wording layer and does not replace the offline advisor.
+
+
+OFFLINE MODE
+============
+
+
+Question:
+How do I maintain the battery?
+
+Detected intent:
+maintenance
+
+Detected component:
+battery
+
+Confidence:
+medium
+
+Answer:
+1. Check if current is going into the batteries.
+2. Make sure batteries are air-cooled.
+
+Tools/materials:
+- clamp meter
+
+Safety warnings:
+- No information available in the manual.
+
+Evidence from manual:
+- chunk_id: 69 | score: 0.137
+  The forwardbiased resistance of a good diode should range from 1000Ω to 10MΩ. The reversebiased resistance of a good diode displays OL on a multimeter. The diode is bad if values are the same in both directions. 6 Maintaining your wind turbine system • Offgrid Check the battery bank voltage and the voltage of each single battery. For flood lead acid batteries: Check the level of distilled water by opening the cap. The lead plate should be flooded entirely. Add distilled water if necessary. Check the battery bank connectors. Oxidised ones should be cleaned with sand paper and be protected with some grease (figure 56). Check the fuses with your multimeter on continuity position (see figure 54).
+- chunk_id: 87 | score: 0.132
+  Broken tail hinge (figure 61): On a very turbulent site, the tail was always moving up and down leading to cracks on the hinge at the low stop level. Remedy: Reinforce the welding (see figure 43, page 28) if your turbine is installed on a very turbulent site. Burnt stator (figure 62): Wind turbine short circuited for some time. A strong windy day leads to this failure. Remedy: In case of strong wind, let your turbine run instead of braking it. Burnt Tristar batteries (figure 63): Problem with a battery that lead the burning of the Tristar which then dumped the battery pack energy directly into the dumpload. Remedy: Check your battery bank. Make sure that your charge controller capacity (e.g. if your system gives 40A, a 45A charge controller is undersized).
+- chunk_id: 14 | score: 0.113
+  Protect chains by pouring them into concrete (figure 4). Protect guy wires and fittings with oil or grease (can also be old car oil) • blades • base of tower • anchors • metal parts Hotdry climates Overheating of electrical components (High temperatures can reduce the battery life by more than 75%) Don‘t paint the stator, it will help the cooling of the coils by ambient air. Make sure all electrical components are ventilated and not enclosed. Make sure batteries are aircooled: surelevate them on a wooden palette, try airconditionning, and make a good insulation of the battery room.
+
+Answer mode:
+offline_advisor
+
+
+
+LLM MODE
+========
+
+
+Question:
+How do I maintain the battery?
+
+Detected intent:
+maintenance
+
+Detected component:
+battery
+
+Confidence:
+medium
+
+Answer:
+1. Check if current is going into the batteries.
+2. Make sure batteries are air-cooled.
+
+Tools/materials:
+- clamp meter
+
+Safety warnings:
+- No information available in the manual.
+
+Evidence from manual:
+- chunk_id: 69 | score: 0.137
+  The forwardbiased resistance of a good diode should range from 1000Ω to 10MΩ. The reversebiased resistance of a good diode displays OL on a multimeter. The diode is bad if values are the same in both directions. 6 Maintaining your wind turbine system • Offgrid Check the battery bank voltage and the voltage of each single battery. For flood lead acid batteries: Check the level of distilled water by opening the cap. The lead plate should be flooded entirely. Add distilled water if necessary. Check the battery bank connectors. Oxidised ones should be cleaned with sand paper and be protected with some grease (figure 56). Check the fuses with your multimeter on continuity position (see figure 54).
+- chunk_id: 87 | score: 0.132
+  Broken tail hinge (figure 61): On a very turbulent site, the tail was always moving up and down leading to cracks on the hinge at the low stop level. Remedy: Reinforce the welding (see figure 43, page 28) if your turbine is installed on a very turbulent site. Burnt stator (figure 62): Wind turbine short circuited for some time. A strong windy day leads to this failure. Remedy: In case of strong wind, let your turbine run instead of braking it. Burnt Tristar batteries (figure 63): Problem with a battery that lead the burning of the Tristar which then dumped the battery pack energy directly into the dumpload. Remedy: Check your battery bank. Make sure that your charge controller capacity (e.g. if your system gives 40A, a 45A charge controller is undersized).
+- chunk_id: 14 | score: 0.113
+  Protect chains by pouring them into concrete (figure 4). Protect guy wires and fittings with oil or grease (can also be old car oil) • blades • base of tower • anchors • metal parts Hotdry climates Overheating of electrical components (High temperatures can reduce the battery life by more than 75%) Don‘t paint the stator, it will help the cooling of the coils by ambient air. Make sure all electrical components are ventilated and not enclosed. Make sure batteries are aircooled: surelevate them on a wooden palette, try airconditionning, and make a good insulation of the battery room.
+
+Answer mode:
+offline_advisor_with_llm_rewriting
