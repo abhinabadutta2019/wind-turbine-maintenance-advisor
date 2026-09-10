@@ -1,35 +1,77 @@
 # Wind Turbine Maintenance Advisor
 
+A full-stack, evidence-grounded wind turbine maintenance and troubleshooting assistant built with **NLP, Information Retrieval, FastAPI, Next.js, and optional LLM-assisted rewriting**.
+
 ## Live Demo
 
 **Application:**  
 https://wind-turbine-maintenance-advisor.vercel.app
 
-The deployed application includes:
+The deployed application supports:
 
-- Offline / Evidence-grounded NLP & Information Retrieval mode
+- Offline / Evidence-grounded mode
 - LLM-assisted rewriting mode using Groq
 - FastAPI backend
 - Next.js frontend
+- Supporting evidence from the maintenance manual
+
+---
+
+## Screenshots
+
+### Advisor Interface
+
+![Advisor Interface](docs/screenshots/01-advisor-interface.png)
+
+### Offline / Evidence-Grounded Result
+
+![Offline Evidence-Grounded Result](docs/screenshots/02-offline-evidence-grounded-result.png)
+
+### LLM-Assisted Result
+
+![LLM-Assisted Result](docs/screenshots/03-llm-assisted-result.png)
 
 ---
 
 ## Overview
 
-This project is an **evidence-grounded Wind Turbine Operation and Maintenance Advisor** built from a technical maintenance manual.
+This project is an **evidence-grounded Wind Turbine Operation and Maintenance Advisor** based on a technical maintenance manual.
 
-The system combines **Natural Language Processing (NLP)**, **Information Retrieval (IR)**, structured maintenance knowledge, and an optional **LLM-assisted rewriting layer**.
+The system combines:
+
+- Natural Language Processing
+- Information Retrieval
+- Structured maintenance knowledge
+- Rule-based reasoning
+- FastAPI
+- Next.js
+- Optional LLM-assisted rewriting
 
 The application supports two answer modes:
 
-- **Offline / Evidence-grounded mode**
-- **LLM-assisted mode**
+### Offline / Evidence-Grounded
 
-The offline advisor is the main technical reasoning system. It retrieves relevant information from the maintenance manual using **TF-IDF and cosine similarity**, detects the user's intent and turbine component, and generates a grounded maintenance response.
+The offline advisor is the main technical system.
 
-The optional LLM layer uses the **Groq API** to improve the wording and presentation of the already-generated answer.
+It:
 
-The LLM does **not independently generate maintenance recommendations**. The offline advisor remains the technical source of truth.
+1. Detects the user's intent
+2. Detects the relevant wind turbine component
+3. Retrieves relevant manual sections using TF-IDF
+4. Ranks evidence using cosine similarity
+5. Uses structured maintenance knowledge
+6. Generates a grounded answer
+7. Returns tools, safety information, confidence, and supporting evidence
+
+No external LLM is required for this mode.
+
+### LLM-Assisted
+
+The system first generates the same grounded technical answer using the offline advisor.
+
+The answer is then sent to an LLM through the **Groq API** only to improve wording and presentation.
+
+The LLM does **not independently generate the maintenance recommendation**.
 
 ---
 
@@ -37,19 +79,21 @@ The LLM does **not independently generate maintenance recommendations**. The off
 
 - TF-IDF document retrieval
 - Cosine similarity ranking
-- Rule-based component detection
 - Rule-based intent detection
-- Structured maintenance knowledge base
-- Evidence-grounded maintenance answers
+- Rule-based component detection
+- Structured JSON knowledge base
+- Evidence-grounded answers
 - Confidence estimation
 - Tool and material extraction
 - Safety information
-- Supporting evidence from the source manual
+- Manual evidence display
 - Optional Groq LLM rewriting
 - Automatic offline fallback if the LLM is unavailable
 - FastAPI REST API
 - Next.js / React frontend
-- Full-stack deployment on Vercel
+- TypeScript
+- Tailwind CSS
+- Full-stack Vercel deployment
 
 ---
 
@@ -70,85 +114,38 @@ Offline Maintenance Advisor
   |-- Intent Detection
   |-- Component Detection
   |-- TF-IDF Retrieval
-  |-- Cosine Similarity
+  |-- Cosine Similarity Ranking
   |-- Structured Knowledge Base
+  |-- Tool / Safety Extraction
   `-- Evidence-Grounded Answer
               |
-              v
-        Optional Groq LLM
-        (readability rewriting only)
-              |
-              v
-         Final Response
+              +------------------------+
+              |                        |
+              | Offline Mode           | LLM-Assisted Mode
+              |                        |
+              v                        v
+         Final Answer            Groq LLM Rewrite
+                                         |
+                                         v
+                                    Final Answer
 ```
 
-The core workflow is:
+The important design principle is:
 
 ```text
 Maintenance Manual
         |
         v
-Text Chunks + Structured Knowledge
+Information Retrieval
         |
         v
-TF-IDF Retrieval
+Grounded Technical Answer
         |
         v
-Cosine Similarity Ranking
-        |
-        v
-Intent + Component Detection
-        |
-        v
-Evidence-Grounded Offline Answer
-        |
-        +----------------------+
-        |                      |
-   Offline Mode          LLM-Assisted Mode
-        |                      |
-        v                      v
-   Final Answer          Groq LLM Rewrite
-                               |
-                               v
-                          Final Answer
+Optional LLM Presentation Layer
 ```
 
----
-
-## Project Structure
-
-```text
-wind-turbine-maintenance-advisor/
-|
-|-- backend/
-|   `-- main.py
-|
-|-- data/
-|   |-- chunks.json
-|   `-- knowledge_base.json
-|
-|-- frontend/
-|   |-- public/
-|   |-- src/
-|   |-- package.json
-|   `-- ...
-|
-|-- reports/
-|
-|-- src/
-|   |-- __init__.py
-|   |-- advisor.py
-|   |-- app.py
-|   `-- llm_answer.py
-|
-|-- tests/
-|
-|-- .gitignore
-|-- pytest.ini
-|-- README.md
-|-- requirements.txt
-`-- vercel.json
-```
+The LLM is not the source of the maintenance knowledge.
 
 ---
 
@@ -156,7 +153,7 @@ wind-turbine-maintenance-advisor/
 
 ### 1. Intent Detection
 
-The system identifies the type of user request, such as:
+The system identifies the purpose of the question, such as:
 
 - Maintenance
 - Troubleshooting
@@ -166,7 +163,7 @@ The system identifies the type of user request, such as:
 
 ### 2. Component Detection
 
-The system detects which turbine component the question refers to.
+The advisor determines which wind turbine component the user is asking about.
 
 Examples include:
 
@@ -178,74 +175,78 @@ Examples include:
 - Controller
 - Metal parts and cables
 
-### 3. Information Retrieval
+### 3. TF-IDF Retrieval
 
-The maintenance manual is divided into searchable text chunks.
+The technical maintenance manual is divided into searchable chunks.
 
-The system uses:
+The query and manual chunks are represented using **TF-IDF vectors**.
 
-- **TF-IDF vectorization**
-- **Cosine similarity**
+### 4. Cosine Similarity
 
-to rank manual sections according to their relevance to the user's question.
+Cosine similarity is used to rank the manual chunks according to their relevance to the user's question.
 
-### 4. Structured Knowledge
+The highest-ranked chunks are returned as supporting evidence.
 
-A structured JSON knowledge base provides additional maintenance information such as:
+### 5. Structured Maintenance Knowledge
 
-- Recommended actions
+The advisor also uses a structured JSON knowledge base containing information such as:
+
+- Maintenance actions
+- Troubleshooting actions
 - Tools and materials
 - Safety information
-- Component-specific guidance
+- Component-specific recommendations
 
-### 5. Evidence-Grounded Answer
+### 6. Evidence-Grounded Response
 
-The advisor produces an answer using retrieved manual content and structured maintenance information.
+The final offline response includes:
 
-The application also returns supporting manual chunks and similarity scores so the user can inspect the evidence behind the response.
+- Detected component
+- Detected intent
+- Confidence level
+- Recommended answer
+- Tools / materials
+- Safety warnings
+- Supporting evidence
+- Similarity scores
 
 ---
 
-## Offline vs LLM-Assisted Mode
+## Offline vs LLM-Assisted Example
 
-### Offline / Evidence-Grounded Mode
-
-In offline mode, the answer is generated directly from the NLP and information-retrieval pipeline.
-
-Example:
+### Offline Response
 
 ```text
-1. Check if current is going into the batteries.
-2. Make sure batteries are air-cooled.
+1. Inspect the rusty part and determine whether the rust is on
+   cable clamps, guy wires, the tower, or another metal part.
+
+2. Protect rusty cable clamps with grease.
+
+3. Guy wires with rust can be protected with used motor oil.
+
+4. Replace the cable if you find a broken cable strand.
+
+5. Check the tower and metal frame for rust and cracks in the welds.
 ```
 
-No external LLM is required for this mode.
-
-### LLM-Assisted Mode
-
-LLM-assisted mode first generates the evidence-grounded technical answer using the offline advisor.
-
-That answer is then sent to the LLM only for **wording and presentation improvement**.
-
-Example:
+### LLM-Assisted Response
 
 ```text
 LLM-polished response:
 
-• Verify that current is flowing into the batteries.
-• Ensure the batteries are air-cooled.
+• Inspect the rusty part to determine whether the corrosion is on
+  cable clamps, guy wires, the tower, or another metal component.
+
+• Protect rusty cable clamps with grease.
+
+• Use used motor oil to protect rusted guy wires.
+
+• Replace the cable if a broken strand is found.
+
+• Check the tower and metal frame for rust and cracks in the welds.
 ```
 
-The LLM is instructed not to:
-
-- Add new maintenance procedures
-- Add unsupported technical information
-- Add new tools or materials
-- Add new safety instructions
-- Change the technical meaning of the offline answer
-- Independently answer the user's maintenance question
-
-This keeps the system grounded while still demonstrating controlled LLM integration.
+The technical meaning remains grounded in the offline advisor.
 
 ---
 
@@ -257,24 +258,17 @@ The project uses the **Groq API** with:
 openai/gpt-oss-20b
 ```
 
-The workflow is:
+The LLM is instructed to:
 
-```text
-Manual
-   |
-   v
-Information Retrieval
-   |
-   v
-Grounded Technical Answer
-   |
-   v
-Optional LLM Rewrite
-```
+- Preserve the technical meaning
+- Improve readability
+- Change presentation
+- Avoid adding unsupported maintenance instructions
+- Avoid adding new tools
+- Avoid adding new safety information
+- Avoid independently answering the original question
 
-If the Groq API is unavailable or the request fails, the application automatically returns the original offline answer.
-
-This means the maintenance advisor remains functional even when the external LLM service is unavailable.
+If the Groq request fails, the system automatically returns the offline answer.
 
 ---
 
@@ -288,7 +282,7 @@ The backend is implemented using **FastAPI**.
 GET /health
 ```
 
-Production health endpoint:
+Production endpoint:
 
 ```text
 https://wind-turbine-maintenance-advisor.vercel.app/health
@@ -324,7 +318,7 @@ offline
 llm
 ```
 
-Example response structure:
+Example response:
 
 ```json
 {
@@ -343,15 +337,58 @@ Example response structure:
 
 ---
 
-## Running the Project Locally
+## Project Structure
+
+```text
+wind-turbine-maintenance-advisor/
+|
+|-- backend/
+|   `-- main.py
+|
+|-- data/
+|   |-- chunks.json
+|   `-- knowledge_base.json
+|
+|-- docs/
+|   `-- screenshots/
+|       |-- 01-advisor-interface.png
+|       |-- 02-offline-evidence-grounded-result.png
+|       `-- 03-llm-assisted-result.png
+|
+|-- frontend/
+|   |-- public/
+|   |-- src/
+|   |   `-- app/
+|   |       `-- page.tsx
+|   |-- package.json
+|   `-- ...
+|
+|-- reports/
+|
+|-- src/
+|   |-- __init__.py
+|   |-- advisor.py
+|   |-- app.py
+|   `-- llm_answer.py
+|
+|-- tests/
+|
+|-- .gitignore
+|-- pytest.ini
+|-- README.md
+|-- requirements.txt
+`-- vercel.json
+```
+
+---
+
+## Running Locally
 
 ### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/abhinabadutta2019/wind-turbine-maintenance-advisor.git
 ```
-
-Move into the project directory:
 
 ```bash
 cd wind-turbine-maintenance-advisor
@@ -363,55 +400,39 @@ cd wind-turbine-maintenance-advisor
 python3 -m venv venv
 ```
 
-Activate it on Linux/macOS:
+Activate it:
 
 ```bash
 source venv/bin/activate
 ```
 
-### 3. Install Python Dependencies
+### 3. Install Backend Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
+### 4. Configure Groq
 
-## Environment Configuration
+LLM-assisted mode requires a Groq API key.
 
-For LLM-assisted mode, create a `.env` file in the project root:
+Create a `.env` file in the project root:
 
 ```env
 GROQ_API_KEY=your_groq_api_key
 ```
 
-Do not commit the `.env` file or API key to GitHub.
+Do not commit the `.env` file.
 
-The offline advisor works without the Groq API.
+Offline mode works without Groq.
 
-For local frontend development, create:
-
-```text
-frontend/.env.local
-```
-
-and add:
-
-```env
-NEXT_PUBLIC_API_URL=http://127.0.0.1:8000
-```
-
----
-
-## Run the FastAPI Backend
-
-From the project root:
+### 5. Run the FastAPI Backend
 
 ```bash
 uvicorn backend.main:app --reload
 ```
 
-The backend runs locally at:
+Backend:
 
 ```text
 http://127.0.0.1:8000
@@ -429,29 +450,29 @@ FastAPI documentation:
 http://127.0.0.1:8000/docs
 ```
 
----
+### 6. Configure the Frontend
 
-## Run the Frontend
+Create:
 
-Open another terminal:
+```text
+frontend/.env.local
+```
+
+Add:
+
+```env
+NEXT_PUBLIC_API_URL=http://127.0.0.1:8000
+```
+
+### 7. Run the Frontend
 
 ```bash
 cd frontend
-```
-
-Install dependencies:
-
-```bash
 npm install
-```
-
-Run the development server:
-
-```bash
 npm run dev
 ```
 
-The frontend will be available at:
+Frontend:
 
 ```text
 http://localhost:3000
@@ -461,15 +482,15 @@ http://localhost:3000
 
 ## CLI Usage
 
-The original Python command-line interface is also available.
+The original command-line interface is also available.
 
-### Offline Mode
+### Offline
 
 ```bash
 python src/app.py "How do I maintain the battery?"
 ```
 
-### LLM-Assisted Mode
+### LLM-Assisted
 
 ```bash
 python src/app.py "How do I maintain the battery?" --use-llm
@@ -478,8 +499,6 @@ python src/app.py "How do I maintain the battery?" --use-llm
 ---
 
 ## Example Questions
-
-Try questions such as:
 
 ```text
 How do I maintain the battery?
@@ -501,20 +520,20 @@ How should I deal with rust on the turbine?
 
 ## Technologies
 
+### NLP / Information Retrieval
+
+- TF-IDF
+- Cosine Similarity
+- Rule-based intent detection
+- Rule-based component detection
+- Structured JSON knowledge base
+
 ### Backend
 
 - Python
 - FastAPI
 - Uvicorn
 - scikit-learn
-
-### NLP / Information Retrieval
-
-- TF-IDF
-- Cosine Similarity
-- Rule-based Intent Detection
-- Rule-based Component Detection
-- Structured JSON Knowledge Base
 
 ### LLM
 
@@ -532,7 +551,7 @@ How should I deal with rust on the turbine?
 
 - Vercel
 - Vercel Services
-- GitHub integration
+- GitHub
 
 ---
 
@@ -549,67 +568,67 @@ Vercel
       |
       |-- NLP / IR pipeline
       |-- Structured knowledge base
-      `-- Groq API integration
+      `-- Groq integration
 ```
 
 Production URL:
 
-```text
 https://wind-turbine-maintenance-advisor.vercel.app
-```
 
-The `/api/*` routes are routed to the FastAPI backend, while the remaining routes are served by the Next.js frontend.
+The `/api/*` routes are routed to the FastAPI service while the frontend is served by Next.js.
 
 ---
 
 ## Design Principles
 
-The project follows several design principles:
-
-- The **offline advisor remains the technical source of truth**
-- Maintenance recommendations are grounded in retrieved manual information
-- Retrieved evidence is exposed to the user
-- The LLM is used only as a controlled rewriting layer
-- The application continues working when the LLM service is unavailable
-- API keys and environment files are excluded from version control
-- The frontend and backend are kept as separate services inside one full-stack deployment
+- The offline advisor remains the technical source of truth
+- Maintenance recommendations are grounded in retrieved manual content
+- Evidence is exposed to the user
+- The LLM is used as a controlled rewriting layer
+- The project continues working when the LLM service is unavailable
+- API keys are excluded from version control
+- Frontend and backend are separated cleanly
+- The application can be used through both a web interface and CLI
 
 ---
 
 ## Current Status
 
-The current version includes:
+The project currently includes:
 
-- Working offline NLP/IR advisor
+- Working NLP/IR maintenance advisor
 - TF-IDF retrieval
-- Evidence display
-- Component and intent detection
+- Cosine similarity ranking
+- Rule-based component detection
+- Rule-based intent detection
+- Structured maintenance knowledge
 - Confidence estimation
-- Tool and material extraction
+- Tool / material extraction
 - Safety information
-- FastAPI backend
-- REST API
+- Supporting evidence
+- FastAPI REST API
 - Next.js frontend
-- Offline / LLM-assisted mode selector
-- Groq LLM integration
-- LLM failure fallback
-- Supporting evidence interface
+- Offline mode
+- LLM-assisted mode
+- Groq integration
+- Automatic LLM fallback
 - Production deployment on Vercel
 
 ---
 
 ## Future Improvements
 
-Possible future extensions include:
+Possible extensions include:
 
-- Improved component and intent classification
-- More structured maintenance rules
+- Improved intent classification
+- Improved component classification
+- Retrieval evaluation metrics
 - Evaluation on a larger maintenance-question dataset
 - Improved manual preprocessing
-- Additional turbine manuals
-- Retrieval evaluation metrics
-- Containerized deployment
+- Support for additional wind turbine manuals
+- More structured maintenance rules
 - Expanded automated testing
+- Docker support
 
 ---
 
