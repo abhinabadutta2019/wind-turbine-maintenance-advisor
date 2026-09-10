@@ -1,0 +1,7 @@
+#example command
+
+#witout LLM
+$ python src/app.py "How do I maintain the battery?"
+
+#with LLM
+$ python src/app.py "How do I maintain the battery?" --use-llm

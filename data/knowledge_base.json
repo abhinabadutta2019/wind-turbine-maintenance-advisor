@@ -1,0 +1,448 @@
+{
+  "battery": {
+    "aliases": [
+      "batteries",
+      "battery bank",
+      "lead-acid battery"
+    ],
+    "maintenance_steps": [],
+    "inspection_steps": [
+      "Check if current is going into the batteries.",
+      "Make sure batteries are air-cooled."
+    ],
+    "tools": [
+      "clamp meter"
+    ],
+    "materials": [
+      "wooden palette"
+    ],
+    "safety_warnings": [],
+    "related_components": [
+      "inverter",
+      "dumpload"
+    ],
+    "source_chunks": [
+      15,
+      65
+    ]
+  },
+  "cable": {
+    "aliases": [
+      "power cable",
+      "3-phase cable",
+      "tower cable",
+      "3-phase cable"
+    ],
+    "maintenance_steps": [
+      "Check the general condition of the cables at the bottom of the tower.",
+      "Replace worn cables when necessary.",
+      "Correct wrong cable connections when found.",
+      "Protect rusty cable clamps with grease."
+    ],
+    "inspection_steps": [
+      "Check cable clamps.",
+      "Check cable connections.",
+      "Check the connections in the junction box."
+    ],
+    "tools": [],
+    "materials": [
+      "grease"
+    ],
+    "safety_warnings": [
+      "Live power cables can create a risk of electric shock."
+    ],
+    "related_components": [
+      "tower",
+      "junction box",
+      "battery"
+    ],
+    "source_chunks": [
+      8,
+      59,
+      60,
+      77,
+      81
+    ]
+  },
+  "tower": {
+    "aliases": [
+      "mast"
+    ],
+    "maintenance_steps": [
+      "Check the tower and related parts for wear and corrosion.",
+      "Check the cables at the bottom of the tower."
+    ],
+    "inspection_steps": [
+      "Check the distance between blade tips and the tower.",
+      "Check flange tightness.",
+      "Check the connections in the junction box.",
+      "Check the tail pivot system."
+    ],
+    "tools": [],
+    "materials": [],
+    "safety_warnings": [
+      "Do not stay below the tower during lowering or raising."
+    ],
+    "related_components": [
+      "blades",
+      "cable",
+      "guy wires",
+      "anchor",
+      "junction box"
+    ],
+    "source_chunks": [
+      38,
+      39,
+      60,
+      77
+    ]
+  },
+  "blades": {
+    "aliases": [
+      "blade",
+      "wooden blades",
+      "resin blades"
+    ],
+    "maintenance_steps": [
+      "Repair holes and cracks when found.",
+      "Store removed blades safely."
+    ],
+    "inspection_steps": [
+      "Inspect blades for cracks, holes, and other damage.",
+      "Inspect the leading edge.",
+      "Inspect blade roots.",
+      "Check the distance between blade tips and the tower."
+    ],
+    "tools": [],
+    "materials": [],
+    "safety_warnings": [
+      "Be careful when removing blades."
+    ],
+    "related_components": [
+      "tower",
+      "rotor"
+    ],
+    "source_chunks": [
+      18,
+      35,
+      38,
+      41,
+      76
+    ]
+  },
+  "rotor": {
+    "aliases": [
+      "rotor disk",
+      "rotor disks"
+    ],
+    "maintenance_steps": [
+      "Store the rotor in a clean, dry place away from metal components.",
+      "Replace corroded magnets when necessary."
+    ],
+    "inspection_steps": [
+      "Check the rotor for cracks in the resin structure.",
+      "Check for friction between rotor and stator.",
+      "Check for wires with missing enamel."
+    ],
+    "tools": [],
+    "materials": [
+      "epoxy resin"
+    ],
+    "safety_warnings": [
+      "Never put fingers between rotor disks because they can be pinched."
+    ],
+    "related_components": [
+      "stator",
+      "magnets",
+      "bearing"
+    ],
+    "source_chunks": [
+      46,
+      47,
+      48
+    ]
+  },
+  "stator": {
+    "aliases": [
+      "alternator stator"
+    ],
+    "maintenance_steps": [],
+    "inspection_steps": [
+      "Check the stator for cracks in the resin structure.",
+      "Check for friction between the rotor and stator.",
+      "Check for wires with missing enamel."
+    ],
+    "tools": [],
+    "materials": [],
+    "safety_warnings": [],
+    "related_components": [
+      "rotor",
+      "magnets",
+      "bearing"
+    ],
+    "source_chunks": [
+      47,
+      48,
+      54,
+      80
+    ]
+  },
+  "magnets": {
+    "aliases": [
+      "magnet",
+      "permanent magnets"
+    ],
+    "maintenance_steps": [
+      "Replace magnets if they are corroded.",
+      "Use epoxy resin when replacing magnets."
+    ],
+    "inspection_steps": [
+      "Check if magnets are corroded."
+    ],
+    "tools": [],
+    "materials": [
+      "epoxy resin",
+      "paint",
+      "grease"
+    ],
+    "safety_warnings": [
+      "Permanent magnet generators have a powerful magnetic field."
+    ],
+    "related_components": [
+      "rotor",
+      "stator"
+    ],
+    "source_chunks": [
+      12,
+      48
+    ]
+  },
+  "inverter": {
+    "aliases": [
+      "grid-tied inverter"
+    ],
+    "maintenance_steps": [],
+    "inspection_steps": [
+      "Check the daily, monthly, or annual yield on the inverter screen.",
+      "Check if the values are correct compared with average wind speed.",
+      "Check error messages on the inverter."
+    ],
+    "tools": [],
+    "materials": [],
+    "safety_warnings": [],
+    "related_components": [
+      "battery",
+      "dumpload",
+      "electrical system"
+    ],
+    "source_chunks": [
+      66,
+      67
+    ]
+  },
+  "guy wires": {
+    "aliases": [
+      "guy wire",
+      "support wires"
+    ],
+    "maintenance_steps": [
+      "Protect rusty guy wires with car oil or plant oil.",
+      "Tighten guy wires when necessary."
+    ],
+    "inspection_steps": [
+      "Check guy wires for wear and corrosion.",
+      "Check if shackles and turnbuckles are secure."
+    ],
+    "tools": [],
+    "materials": [
+      "car oil",
+      "plant oil",
+      "grease"
+    ],
+    "safety_warnings": [],
+    "related_components": [
+      "tower",
+      "anchor"
+    ],
+    "source_chunks": [
+      40,
+      59,
+      86,
+      89
+    ]
+  },
+  "bearing": {
+    "aliases": [
+      "bearings",
+      "hub bearing",
+      "roller bearing"
+    ],
+    "maintenance_steps": [
+      "Replace both roller bearings at the same time when needed.",
+      "Tighten the nut, spin the hub, then slack it off slightly to reduce stress on the bearing."
+    ],
+    "inspection_steps": [
+      "Check for play in the hub.",
+      "Check if the hub bearing is stuck."
+    ],
+    "tools": [
+      "angle grinder",
+      "hammer"
+    ],
+    "materials": [
+      "bearing kit",
+      "rubber sealing"
+    ],
+    "safety_warnings": [],
+    "related_components": [
+      "hub",
+      "rotor",
+      "stator"
+    ],
+    "source_chunks": [
+      52,
+      53,
+      54,
+      79,
+      80
+    ]
+  },
+  "anchor": {
+    "aliases": [
+      "anchors",
+      "anchor point",
+      "anchor points"
+    ],
+    "maintenance_steps": [
+      "Check that anchor points are secure.",
+      "Secure a moving pile with a second one if needed."
+    ],
+    "inspection_steps": [
+      "Inspect each anchor point.",
+      "Check if chains, shackles, and turnbuckles are secure."
+    ],
+    "tools": [],
+    "materials": [],
+    "safety_warnings": [
+      "The tower should always be attached to prevent it from falling over."
+    ],
+    "related_components": [
+      "tower",
+      "guy wires"
+    ],
+    "source_chunks": [
+      29,
+      30,
+      40,
+      74
+    ]
+  },
+  "brake": {
+    "aliases": [
+      "short-circuit brake",
+      "brake switch"
+    ],
+    "maintenance_steps": [
+      "Stop the wind turbine by switching on the short-circuit brake before maintenance.",
+      "Brake the turbine with the brake switch before inspection."
+    ],
+    "inspection_steps": [
+      "Check that the brake system is working before lowering or inspecting the turbine."
+    ],
+    "tools": [],
+    "materials": [],
+    "safety_warnings": [
+      "Before any maintenance action, stop the wind turbine using the short-circuit brake."
+    ],
+    "related_components": [
+      "tower",
+      "electrical system"
+    ],
+    "source_chunks": [
+      7,
+      29,
+      74
+    ]
+  },
+  "dumpload": {
+    "aliases": [
+      "dump load",
+      "load resistor"
+    ],
+    "maintenance_steps": [
+      "Check the surrounding area of the dumpload for signs of overheating or burning.",
+      "Make sure the temperature around the dumpload is acceptable."
+    ],
+    "inspection_steps": [
+      "Check if current is going into the dumpload.",
+      "Check fuses using a multimeter in continuity mode.",
+      "Check that ground and metal parts are connected correctly."
+    ],
+    "tools": [
+      "multimeter",
+      "clamp meter"
+    ],
+    "materials": [],
+    "safety_warnings": [
+      "Poorly tightened wires can cause fire and increase the risk of electric shock."
+    ],
+    "related_components": [
+      "battery",
+      "inverter",
+      "charge controller"
+    ],
+    "source_chunks": [
+      65,
+      68,
+      70
+    ]
+  },
+  "ground rod": {
+    "aliases": [
+      "grounding rod",
+      "earth rod"
+    ],
+    "maintenance_steps": [
+      "Connect the electrical system to the same ground rod using a ground cable to the tower."
+    ],
+    "inspection_steps": [
+      "Check that grounding connections are present and secure."
+    ],
+    "tools": [],
+    "materials": [
+      "ground cable"
+    ],
+    "safety_warnings": [],
+    "related_components": [
+      "tower",
+      "lightning arrester",
+      "electrical system"
+    ],
+    "source_chunks": [
+      11
+    ]
+  },
+  "lightning arrester": {
+    "aliases": [
+      "lightning arrestor",
+      "surge arrester"
+    ],
+    "maintenance_steps": [
+      "Install a lightning arrester between the tower and the electronics."
+    ],
+    "inspection_steps": [
+      "Check that the lightning arrester is present between the tower and electronics."
+    ],
+    "tools": [],
+    "materials": [],
+    "safety_warnings": [],
+    "related_components": [
+      "tower",
+      "ground rod",
+      "electronics"
+    ],
+    "source_chunks": [
+      11
+    ]
+  }
+}
